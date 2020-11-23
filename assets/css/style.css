@@ -1,0 +1,36 @@
+@font-face {
+    font-family: theSimpsons;
+    src: url('../fonts/Simpsonfont.ttf');
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: #ffde00;
+    max-width: 1600px;
+}
+
+/* Background image of the header section */
+header {
+background-image: url('../images/clouds_header.jpg'); 
+background-color: #ffde00; 
+height: 200px; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+}
+
+header>div {
+    text-align: center;
+}
+
+#headerLogo {
+  max-height: 200px;
+}
+
+.simpsonsFont {
+    font-family: theSimpsons;
+}
