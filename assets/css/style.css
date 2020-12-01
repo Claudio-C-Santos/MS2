@@ -34,3 +34,41 @@ header>div {
 .simpsonsFont {
     font-family: theSimpsons;
 }
+
+section {
+    border: 5px solid #f05a2b;
+    border-radius: 25px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    box-shadow: 10px 5px 5px black;
+}
+
+.question {
+    letter-spacing: 4px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.answers {
+    letter-spacing: 4px;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    font-size: 30px;
+}
+
+.btn {
+    height: 3rem;
+    border-radius: 25px;
+    background: #f05a2b;
+    font-family: theSimpsons;
+    font-weight: bold;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+
+
