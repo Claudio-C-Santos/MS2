@@ -2,6 +2,7 @@
     font-family: theSimpsons;
     src: url('../fonts/Simpsonfont.ttf');
 }
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
 
 
 body {
@@ -35,16 +36,6 @@ header>div {
     font-family: theSimpsons;
 }
 
-#quote-header {
-    float: left;
-    width: 50%;
-}
-
-#level-header {
-    float: right;
-    width: 50%;
-}
-
 #level-img {
     height: 400px;
     border-radius: 25px;
@@ -62,20 +53,26 @@ section {
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
-    padding: 20px;
+    padding: 0;
+    margin: 0 20px;
 }
 
-.block-question {
-    display: inline;
-    width: auto;    
+p {
+    white-space: pre-line;
 }
 
-#level-block { 
-    display: inline;
-    width: inherit;
-    float: right;   
+#block-question {
+    flex: 1;
+}
+
+#introTitle {
+    text-align: center;
+}
+
+#level-block {
+    display: inline;      
     width: fit-content;
-    padding: 0;    
+    padding: 0;
 }
 
 #quote-block {
@@ -87,7 +84,6 @@ section {
     padding: 0;
     width: 100%;
 }
-
 
 .question {
     letter-spacing: 4px;
@@ -109,11 +105,27 @@ section {
     background: #f05a2b;
     font-family: theSimpsons;
     font-weight: bold;
+    margin: 0 auto;
+    display: block;
 }
 
 .btn:focus {
     outline: none;
 }
 
+.descrText{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    text-align: justify;
+    margin: 30px 100px;
+}
 
+.quote {
+    margin: 10px;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.author {
+    margin: 10px;
+}
 
