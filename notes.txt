@@ -1,0 +1,17 @@
+- LEVEL-BLOCK
+
+[] Change image according to LEVEL
+
+- GAME-BLOCK
+
+[] Get question object according to level
+[] Actions when question is answered correctly
+    [] level++
+    [] time reset
+    [] points added to score
+[] endOfGame()
+[]Finish list of questions
+
+- SCORE & TIME
+
+[] Action when time reaches zero
