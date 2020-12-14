@@ -129,3 +129,47 @@ p {
     margin: 10px;
 }
 
+ul {
+    padding: 0;
+}
+
+#questionText {
+    font-family: theSimpsons;
+    letter-spacing: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.answersList {
+    font-family: theSimpsons;
+    list-style-type: none;
+    font-size: 1.5rem;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 10px auto;
+    width: 75%;
+    border: 2px solid #f05a2b;
+    border-radius: 25px;
+}
+
+.answersList:hover {
+    box-shadow: 10px 5px 5px black;
+    font-weight: bold;
+}
+
+.scoreTimeTitles {
+    font-family: theSimpsons;
+    font-size: 2rem;
+    width: 150px;   
+    text-align: center;
+    margin: 20px auto 10px auto;
+}
+
+.scoreTime {
+    font-family: theSimpsons;
+    font-size: 3rem;
+    width: 150px;   
+    text-align: center;
+}

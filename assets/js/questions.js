@@ -1,41 +1,41 @@
 //General questions
 let questionsLevel1 = [
     {
-        question: "What color is everyone's skin in The Simpson's world?",
+        question: "Which is the main color of The Simpsons world?",
         options: ["blue", "green", "yellow", "pink"],
         answer: "yellow"
     },
     {
-        question: "How many kids are there in The Simpson's family?",
-        options: ["4", "5", "7", "3"],
-        answer: "3"
+        question: "How many kids are there in The Simpsons family?",
+        options: ["Four", "Five", "Seven", "Three"],
+        answer: "Three"
     }
 ]
 
 //Questions about the family member's names
 let questionsLevel2 = [
     {
-        question: "What is the father's name in The Simpson's family?",
+        question: "What is the father's name in The Simpsons family?",
         options: ["Mr. Burns", "Bart", "Homer", "Carl"],
         answer: "Homer"
     },
     {
-        question: "What is the mother's name in The Simpson's family?",
+        question: "What is the mother's name in The Simpsons family?",
         options: ["Lisa", "Edna", "Patty", "Marge"],
         answer: "Marge"
     },
     {
-        question: "What is the son's name in The Simpson's family?",
+        question: "What is the son's name in The Simpsons family?",
         options: ["Bart", "Ned", "Moe", "Apu"],
         answer: "Bart"
     },
     {
-        question: "What is the older daughter's name in The Simpson's family?",
+        question: "What is the older daughter's name in The Simpsons family?",
         options: ["Lisa", "Maude", "Selma", "Marge"],
         answer: "Lisa"
     },
     {
-        question: "What is the baby's name in The Simpson's family?",
+        question: "What is the baby's name in The Simpsons family?",
         options: ["Lisa", "Patty", "Maggie", "Marge"],
         answer: "Maggie"
     }
