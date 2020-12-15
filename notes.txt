@@ -1,6 +1,7 @@
 - LEVEL-BLOCK
 
 [X] Change image according to LEVEL
+[] Update image when level up
 
 - GAME-BLOCK
 

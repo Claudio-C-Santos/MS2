@@ -73,14 +73,12 @@ function clearBlock() {
 }
 
 //This function resets all counts
-function reset() {
-    score = 0;
-    level = 1;
-
+function resetTimer() {
     questionDuration = 15;
     secondsElapsed = 0;
-    let gameInterval;
+    clearInterval(gameInterval);
 }
+
 
 //This function starts the game by displaying the question and answer options
 function startQuiz(question) {
@@ -101,7 +99,7 @@ function startTimer() {
         questionDuration--;
     },1000)
 
-    if (questionDuration === 0) {
+    if (questionDuration === '0') {
         alert("DONE")
     }
 }
@@ -150,9 +148,12 @@ function scoreAnswer(answerSelected) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
                     startQuiz(questionsLevel2);
-                }, 500);      
-                reset();   
-                level++   
+                    removeElement("level-block")
+                    displayLevel();
+                    resetTimer();                     
+                }, 500);   
+                level++;
+               
             } else {
                 e.setAttribute("style", "background-color: red");
                 setTimeout(function() {
@@ -172,8 +173,8 @@ function endOfGame() {
 
 //Function used to remove elements from DOM
 function removeElement(element) {
-    document.getElementById(element);
-    element.remove()
+    let elem = document.getElementById(element);
+    elem.remove()
 }
 
 //This function will display a block on the left of the screen with the current level. The current level will be displayed with an image (Images Source: https://fanart.tv/series/71663/the-simpsons/).
@@ -192,6 +193,8 @@ function displayLevel() {
     levelImage.setAttribute("alt", "level-image");
     levelImage.setAttribute("src", imgSrc);
     levelBlock.appendChild(levelImage);
+
+
 }
 
 function displayScoreTime() {
