@@ -3,14 +3,15 @@ let levelBlock = document.querySelector("#level-block");
 let gameBlock = document.querySelector("#gameBlock");
 
 let score = 0;
-let level = 2;
+let level = 1;
 
-let questionDuration = 3;
+let questionDuration = 15;
 let secondsElapsed = 0;
 let gameInterval;
 
 //Call API Simpsons' quotes
 ajaxCall();
+
 $(document).ready(function(){
     let fullWidth = $("#gameBlock").width();
     let levelBlock = $("#level-block").width();
@@ -39,7 +40,6 @@ init();
 // This function outputs the introduction screen with a button to start the game.
 function init() {
     clearBlock();
-    reset();
 
     let heading = document.createElement("h1");
     heading.setAttribute("class", "simpsonsFont");
@@ -51,7 +51,7 @@ function init() {
     description.setAttribute("class", "descrText");
     description.textContent = `This quiz will test your knowledge about the amazing TV show THE SIMPSONS. \r\n 
     There are 20 levels to go through, each of them is based of different aspects of the show. \r\n 
-    You will have 15 seconds to answer each question and once you have done it correctly, the remaining seconds will be added as points to your score. There are now second chances so let's see if you are a real Simpsons Fan!\r\n
+    You will have 15 seconds to answer each question and once you have done it correctly, the remaining seconds will be added as points to your score. There are no second chances so let's see if you are a real Simpsons Fan!\r\n
     Whenever you are ready just press the button below to start the game!`;
     questionBlock.appendChild(description);
 
@@ -75,9 +75,9 @@ function clearBlock() {
 //This function resets all counts
 function reset() {
     score = 0;
-    level = 5;
+    level = 1;
 
-    questionDuration = 3;
+    questionDuration = 15;
     secondsElapsed = 0;
     let gameInterval;
 }
@@ -150,7 +150,9 @@ function scoreAnswer(answerSelected) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
                     startQuiz(questionsLevel2);
-                }, 500);            
+                }, 500);      
+                reset();   
+                level++   
             } else {
                 e.setAttribute("style", "background-color: red");
                 setTimeout(function() {
@@ -166,7 +168,6 @@ function endOfGame() {
     
     removeElement(scoreAndTime);
     removeElement(level-block);
-    
 }
 
 //Function used to remove elements from DOM
@@ -184,7 +185,7 @@ function displayLevel() {
 
     questionBlock.setAttribute("style", "margin-left: 30px;");
     
-    let imgSrc =`assets/images/1.jpg`;
+    let imgSrc =`assets/images/${level}.jpg`;
 
     let levelImage = document.createElement("img");
     levelImage.setAttribute("id", "level-img");
@@ -218,7 +219,7 @@ function displayScoreTime() {
 
     let displayScore = document.createElement("div");
     displayScore.setAttribute("class", "scoreTime");
-    displayScore.textContent = level;
+    displayScore.textContent = score;
     scoreTimeBlock.appendChild(displayScore);
 }
 

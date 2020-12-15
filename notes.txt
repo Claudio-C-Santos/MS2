@@ -1,6 +1,6 @@
 - LEVEL-BLOCK
 
-[] Change image according to LEVEL
+[X] Change image according to LEVEL
 
 - GAME-BLOCK
 
@@ -14,4 +14,9 @@
 
 - SCORE & TIME
 
+[] Fix time interval between seconds
 [] Action when time reaches zero
+
+- QUOTES
+
+[] Fix API
