@@ -5,7 +5,7 @@ let gameBlock = document.querySelector("#gameBlock");
 let score = 0;
 let level = 1;
 
-let questionDuration = 15;
+let questionDuration = 14;
 let secondsElapsed = 0;
 let gameInterval;
 
@@ -62,8 +62,8 @@ function init() {
 
     startButton.addEventListener("click", function() {
         startQuiz(questionsLevel1);
-        displayLevel();
         displayScoreTime();
+        displayLevel();
     })
 }
 
@@ -79,7 +79,6 @@ function resetTimer() {
     clearInterval(gameInterval);
 }
 
-
 //This function starts the game by displaying the question and answer options
 function startQuiz(question) {
     clearBlock(); 
@@ -88,20 +87,19 @@ function startQuiz(question) {
 
     displayQuestions(question);
 
-
-
-
 }
 
 function startTimer() {
     gameInterval = setInterval(function() {
-        document.getElementById('timer').innerHTML = questionDuration;
-        questionDuration--;
+        document.getElementById('timer').textContent = questionDuration;
+        questionDuration--
+        secondsElapsed++;
+        if (questionDuration < 0) {
+            questionDuration = 0;
+            clearInterval(gameInterval);
+            endOfGame();
+        }
     },1000)
-
-    if (questionDuration === '0') {
-        alert("DONE")
-    }
 }
 
 function displayQuestions(arr) {
@@ -150,7 +148,8 @@ function scoreAnswer(answerSelected) {
                     startQuiz(questionsLevel2);
                     removeElement("level-block")
                     displayLevel();
-                    resetTimer();                     
+                    resetTimer();   
+                    updateScore();                  
                 }, 500);   
                 level++;
                
@@ -166,9 +165,12 @@ function scoreAnswer(answerSelected) {
 //Function that runs once the game ends (user chooses wrong answer) and displays the final score
 function endOfGame() {
     clearBlock(); 
-    
-    removeElement(scoreAndTime);
-    removeElement(level-block);
+
+    let description = document.createElement("p");
+    description.setAttribute("class", "descrText");
+    description.textContent = `You suck!`;
+    questionBlock.appendChild(description);
+
 }
 
 //Function used to remove elements from DOM
@@ -206,13 +208,14 @@ function displayScoreTime() {
     scoreTimeBlock.setAttribute("style", "margin-left: 30px;");
 
     let scoreTitle = document.createElement("div");
-    scoreTitle.textContent = "Time:";
-    scoreTitle.setAttribute("class", "scoreTimeTitles")
+    scoreTitle.textContent = "Time";
+    scoreTitle.setAttribute("class", "scoreTimeTitles");
     scoreTimeBlock.appendChild(scoreTitle);
 
     let displayTime = document.createElement("span");
     displayTime.setAttribute("class", "scoreTime");
     displayTime.setAttribute("id", "timer")
+    displayTime.textContent = 15;
     scoreTimeBlock.appendChild(displayTime);
 
     let timeTitle = document.createElement("div");
@@ -222,10 +225,15 @@ function displayScoreTime() {
 
     let displayScore = document.createElement("div");
     displayScore.setAttribute("class", "scoreTime");
+    displayScore.setAttribute("id", "score");
     displayScore.textContent = score;
     scoreTimeBlock.appendChild(displayScore);
 }
 
+function updateScore() {
+    score += document.getElementById('timer').textContent - secondsElapsed;
+    document.getElementById("score").textContent = score;
+}
 
 
 

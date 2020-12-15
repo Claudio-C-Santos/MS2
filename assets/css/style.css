@@ -173,3 +173,8 @@ ul {
     width: 150px;   
     text-align: center;
 }
+
+#timer {
+    float: right;
+    margin-bottom: 1rem;
+}
