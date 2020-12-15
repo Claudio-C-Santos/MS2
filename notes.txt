@@ -16,8 +16,9 @@
 - SCORE & TIME
 
 [X] Fix time interval between seconds
-[] Action when time reaches zero
+[X] Action when time reaches zero
+[] From level 2 onwards, when time is out it keeps on running
 
 - QUOTES
 
-[] Fix API
+[X] Fix API

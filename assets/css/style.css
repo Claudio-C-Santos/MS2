@@ -120,12 +120,12 @@ p {
     margin: 30px 100px;
 }
 
-.quote {
+#quote {
     margin: 10px;
     font-family: "Josefin Sans", sans-serif;
 }
 
-.author {
+#author {
     margin: 10px;
 }
 

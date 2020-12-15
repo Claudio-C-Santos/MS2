@@ -9,33 +9,38 @@ let questionDuration = 14;
 let secondsElapsed = 0;
 let gameInterval;
 
-//Call API Simpsons' quotes
-ajaxCall();
-
+//This adjusts levelBlock's width to fit with the divs created via JS functions
 $(document).ready(function(){
     let fullWidth = $("#gameBlock").width();
     let levelBlock = $("#level-block").width();
     $("#block-question").width(fullWidth - levelBlock);
-})
-
-//API with The Simpsons random quotes and their author.
-// https://github.com/jaridwarren/simpsons-quotes
-function ajaxCall() {
-  $.ajax({
-    method: 'get',
-    url: 'https://thesimpsonsquoteapi.glitch.me/quotes'
-  })
-    .done(function(data) {
-      $('.quote').html(`"${data[0].quote}"`);
-      $('.author').html(`&mdash; ${data[0].character}`);
-      $('.character').attr('src', data[0].image);
-    })
-    .fail(function() {
-      alert('Something went wrong.');
-    });
-}
+    randomQuotes(quotes);
+});
 
 init();
+
+function levelObject(input) {
+    if (input === 1) {
+        console.log(questionsLevel1);
+    } else if (input === 2) {
+        console.log(questionsLevel2);
+    } else if (input === 3) {
+        console.log(questionsLevel3);
+    } else if (input === 4) {
+        console.log(questionsLevel4);
+    } else if (input === 5) {
+        console.log(questionsLevel5);
+    } else if (input === 6) {
+        console.log(questionsLevel6);
+}
+}
+
+//This function randomly selects a different quote to display
+function randomQuotes(obj) {
+    let randomSelection = Math.floor(Math.random() * obj.length);
+    document.getElementById("quote").textContent = obj[randomSelection].quote;
+    document.getElementById("author").textContent = obj[randomSelection].character;
+}
 
 // This function outputs the introduction screen with a button to start the game.
 function init() {
@@ -64,7 +69,8 @@ function init() {
         startQuiz(questionsLevel1);
         displayScoreTime();
         displayLevel();
-    })
+        randomQuotes(quotes);
+    });
 }
 
 //This function clears all elements children of the main block
@@ -79,7 +85,7 @@ function resetTimer() {
     clearInterval(gameInterval);
 }
 
-//This function starts the game by displaying the question and answer options
+//This function starts the game and calls the necessary functions for it
 function startQuiz(question) {
     clearBlock(); 
 
@@ -89,21 +95,27 @@ function startQuiz(question) {
 
 }
 
+//This function starts the timer and set action when it reaches zero
 function startTimer() {
     gameInterval = setInterval(function() {
         document.getElementById('timer').textContent = questionDuration;
-        questionDuration--
+        questionDuration--;
         secondsElapsed++;
         if (questionDuration < 0) {
-            questionDuration = 0;
-            clearInterval(gameInterval);
             endOfGame();
+            stopTimer();
+            clearInterval(gameInterval);
         }
-    },1000)
+    }, 1000);
 }
 
+function stopTimer() {
+    clearTimeout(gameInterval);
+}
+
+//This function displays the questions and answers
 function displayQuestions(arr) {
-                                        //Didn't include clearBlock()
+    clearBlock();
 
     //This part of the function displays the question inside #questionBlock
     let randomIndex = Math.floor(Math.random() * arr.length);
@@ -113,7 +125,7 @@ function displayQuestions(arr) {
     let currentQuestion = arr[randomIndex].question;
 
     let question = document.createElement("h1");
-    question.setAttribute("id", "questionText")
+    question.setAttribute("id", "questionText");
     question.textContent = currentQuestion;
     questionBlock.append(question);
 
@@ -124,7 +136,7 @@ function displayQuestions(arr) {
     for (let i = 0; i < objectQuestion.options.length; i++) {
         let answerOptions = document.createElement("li");
         answerOptions.setAttribute("class", "answersList");
-        answerOptions.setAttribute("choice-value", objectQuestion.options[i])
+        answerOptions.setAttribute("choice-value", objectQuestion.options[i]);
         answerOptions.setAttribute("id", "questionNum-"+i);        
         answerOptions.textContent = objectQuestion.options[i];
         answerBlock.append(answerOptions);
@@ -132,7 +144,7 @@ function displayQuestions(arr) {
 
     answerBlock.addEventListener("click", function() {
         scoreAnswer(objectQuestion);
-    })
+    });
 }
 
 //This function shows if the selected answer is correct or not and acts accordingly. 
@@ -145,30 +157,35 @@ function scoreAnswer(answerSelected) {
             if (selectedItem === answerSelected.answer) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
-                    startQuiz(questionsLevel2);
-                    removeElement("level-block")
-                    displayLevel();
-                    resetTimer();   
-                    updateScore();                  
+                    removeElement("level-block");
+                    displayQuestions(questionsLevel1);
+                    displayLevel(); 
+                    updateScore(); 
+                    randomQuotes(quotes);                 
                 }, 500);   
                 level++;
                
             } else {
                 e.setAttribute("style", "background-color: red");
                 setTimeout(function() {
-                endOfGame() 
+                endOfGame();
                 }, 500);
+                stopTimer();
             }
         }
 }
 
-//Function that runs once the game ends (user chooses wrong answer) and displays the final score
+//Function that runs once the game ends (user chooses wrong answer or time runs out) and displays the final score
 function endOfGame() {
     clearBlock(); 
 
+    randomQuotes(quotes); 
+
+    removeElement("scoreAndTime");
+
     let description = document.createElement("p");
     description.setAttribute("class", "descrText");
-    description.textContent = `You suck!`;
+    description.textContent = `Your score was ${score}`;
     questionBlock.appendChild(description);
 
 }
@@ -176,7 +193,7 @@ function endOfGame() {
 //Function used to remove elements from DOM
 function removeElement(element) {
     let elem = document.getElementById(element);
-    elem.remove()
+    elem.remove();
 }
 
 //This function will display a block on the left of the screen with the current level. The current level will be displayed with an image (Images Source: https://fanart.tv/series/71663/the-simpsons/).
@@ -199,6 +216,7 @@ function displayLevel() {
 
 }
 
+//This function displays the block where time and score is displayed
 function displayScoreTime() {
     let scoreTimeBlock = document.createElement("div");
     scoreTimeBlock.setAttribute("class", "block");
@@ -214,13 +232,13 @@ function displayScoreTime() {
 
     let displayTime = document.createElement("span");
     displayTime.setAttribute("class", "scoreTime");
-    displayTime.setAttribute("id", "timer")
+    displayTime.setAttribute("id", "timer");
     displayTime.textContent = 15;
     scoreTimeBlock.appendChild(displayTime);
 
     let timeTitle = document.createElement("div");
     timeTitle.textContent = "Score";
-    timeTitle.setAttribute("class", "scoreTimeTitles")
+    timeTitle.setAttribute("class", "scoreTimeTitles");
     scoreTimeBlock.appendChild(timeTitle);
 
     let displayScore = document.createElement("div");
@@ -230,38 +248,8 @@ function displayScoreTime() {
     scoreTimeBlock.appendChild(displayScore);
 }
 
+//This function updates the score by adding the remaining time left once the question is correctly answered
 function updateScore() {
     score += document.getElementById('timer').textContent - secondsElapsed;
     document.getElementById("score").textContent = score;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function startTimer(duration, display) {
-    let timer = duration, seconds;
-    
-    setInterval( function() {
-        seconds = parseInt(timer % 60, 10);
-
-        console.log(seconds)
-
-        display = seconds;
-
-        if (--timer < 0) {
-            timer = duration;
-        }
-    }, 1000)
-}
-*/
