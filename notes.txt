@@ -5,15 +5,16 @@
 
 - GAME-BLOCK
 
-[] Get question object according to level
+[] endOfGame()
+[] finalScore()
+[] Review list of questions
+[X] Get question object according to level
 [X] Actions when question is answered correctly
     [X] level++
     [X] time reset
     [X] points added to score
-[] endOfGame()
 [X]Finish list of questions
-[] Review list of questions
-[] What happens when level 21 is reached?
+
 
 - SCORE & TIME
 

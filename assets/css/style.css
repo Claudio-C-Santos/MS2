@@ -69,6 +69,7 @@ p {
     text-align: center;
 }
 
+
 #level-block {
     display: inline;      
     width: fit-content;
@@ -105,7 +106,7 @@ p {
     background: #f05a2b;
     font-family: theSimpsons;
     font-weight: bold;
-    margin: 0 auto;
+    margin: 25px auto;
     display: block;
 }
 
@@ -113,11 +114,16 @@ p {
     outline: none;
 }
 
+#introImage {
+    float: right;
+}
+
 .descrText{
+    display: inline-block;
+    width: 70%;
     font-family: "Josefin Sans", sans-serif;
     font-weight: bold;
     text-align: justify;
-    margin: 30px 100px;
 }
 
 #quote {

@@ -24,6 +24,7 @@ $(document).ready(function(){
 
 init();
 
+//This function selects the question object to access depending on the level
 function questionSelector(level) {
     if (level === 1) {
         levelQuestion = questionsLevel1;
@@ -93,6 +94,11 @@ function init() {
     Whenever you are ready just press the button below to start the game!`;
     questionBlock.appendChild(description);
 
+    let introImage = document.createElement("img");
+    introImage.setAttribute("src", "assets/images/family_couch.png");
+    introImage.setAttribute("id", "introImage");
+    questionBlock.appendChild(introImage);
+
     let startButton = document.createElement("button");
     startButton.setAttribute("class", "btn");
     startButton.textContent = `Ay Caramba!`;
@@ -129,13 +135,14 @@ function startTimer() {
         questionDuration--;
         secondsElapsed++;
         if (questionDuration < 0) {
-            endOfGame();
+            finalScore();
             stopTimer();
             clearInterval(gameInterval);
         }
     }, 1000);
 }
 
+//This function stops the question timer
 function stopTimer() {
     clearTimeout(gameInterval);
 }
@@ -181,7 +188,7 @@ function scoreAnswer(answerSelected) {
         if (e.matches("li")) {
             let selectedItem = e.textContent;
 
-            if (selectedItem === answerSelected.answer) {
+            if (selectedItem === answerSelected.answer && level < 20) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
                     removeElement("level-block");
@@ -194,11 +201,16 @@ function scoreAnswer(answerSelected) {
                     randomQuotes(quotes);                 
                 }, 500);   
                 level++;
-               
+            } else if (selectedItem === answerSelected.answer && level === 20) {
+                e.setAttribute("style", "background-color: green");    
+                setTimeout(function() {                    
+                    endOfGame();                
+                }, 500); 
+                stopTimer();             
             } else {
                 e.setAttribute("style", "background-color: red");
                 setTimeout(function() {
-                endOfGame();
+                    finalScore();
                 }, 500);
                 stopTimer();
             }
@@ -206,7 +218,9 @@ function scoreAnswer(answerSelected) {
 }
 
 //Function that runs once the game ends (user chooses wrong answer or time runs out) and displays the final score
-function endOfGame() {
+function finalScore() {
+    removeElement("level-block");
+    questionBlock.removeAttribute("style", "margin-left: 30px;");
     clearBlock(); 
 
     randomQuotes(quotes); 
@@ -217,7 +231,22 @@ function endOfGame() {
     description.setAttribute("class", "descrText");
     description.textContent = `Your score was ${score}`;
     questionBlock.appendChild(description);
+}
 
+//This function runs once the 20th question has been correctly answered and the quiz completed
+function endOfGame() {
+    removeElement("level-block");
+    questionBlock.removeAttribute("style", "margin-left: 30px;");
+    clearBlock(); 
+
+    randomQuotes(quotes); 
+
+    removeElement("scoreAndTime");
+
+    let description = document.createElement("p");
+    description.setAttribute("class", "descrText");
+    description.textContent = `You completed the quiz!`;
+    questionBlock.appendChild(description);
 }
 
 //Function used to remove elements from DOM
@@ -242,8 +271,6 @@ function displayLevel() {
     levelImage.setAttribute("alt", "level-image");
     levelImage.setAttribute("src", imgSrc);
     levelBlock.appendChild(levelImage);
-
-
 }
 
 //This function displays the block where time and score is displayed
