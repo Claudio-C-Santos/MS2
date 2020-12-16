@@ -6,18 +6,20 @@
 - GAME-BLOCK
 
 [] Get question object according to level
-[] Actions when question is answered correctly
-    [] level++
-    [] time reset
-    [] points added to score
+[X] Actions when question is answered correctly
+    [X] level++
+    [X] time reset
+    [X] points added to score
 [] endOfGame()
-[]Finish list of questions
+[X]Finish list of questions
+[] Review list of questions
+[] What happens when level 21 is reached?
 
 - SCORE & TIME
 
 [X] Fix time interval between seconds
 [X] Action when time reaches zero
-[] From level 2 onwards, when time is out it keeps on running
+[X] From level 2 onwards, when time is out it keeps on running
 
 - QUOTES
 

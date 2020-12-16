@@ -17,6 +17,7 @@ let questionsLevel1 = [
     }
 ]
 
+
 //Questions about the family member's names
 let questionsLevel2 = [
     {
@@ -84,8 +85,8 @@ let questionsLevel4 = [
     },
     {
         question: "Lisa is ...",
-        options: ["Older than Homer", "Younger than Maggie", "Older than Marge", "Older than Bart"],
-        answer: "Younger than Bart"
+        options: ["Older than Homer", "Older than Maggie", "Older than Marge", "Older than Bart"],
+        answer: "Older than Maggie"
     },
     {
         question: "What is the name of Lisa's brother?",

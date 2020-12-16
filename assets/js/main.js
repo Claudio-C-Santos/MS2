@@ -1,13 +1,18 @@
+//These are variables related to HTML elements which are manipulated by javascript
 let questionBlock = document.querySelector("#block-question");
 let levelBlock = document.querySelector("#level-block");
 let gameBlock = document.querySelector("#gameBlock");
 
+
+//These are game related variables which change during the quiz's course
 let score = 0;
 let level = 1;
 
 let questionDuration = 14;
 let secondsElapsed = 0;
 let gameInterval;
+
+let levelQuestion = [];
 
 //This adjusts levelBlock's width to fit with the divs created via JS functions
 $(document).ready(function(){
@@ -19,20 +24,48 @@ $(document).ready(function(){
 
 init();
 
-function levelObject(input) {
-    if (input === 1) {
-        console.log(questionsLevel1);
-    } else if (input === 2) {
-        console.log(questionsLevel2);
-    } else if (input === 3) {
-        console.log(questionsLevel3);
-    } else if (input === 4) {
-        console.log(questionsLevel4);
-    } else if (input === 5) {
-        console.log(questionsLevel5);
-    } else if (input === 6) {
-        console.log(questionsLevel6);
-}
+function questionSelector(level) {
+    if (level === 1) {
+        levelQuestion = questionsLevel1;
+    } else if (level === 2) {
+        levelQuestion = questionsLevel2;
+    } else if (level === 3) {
+        levelQuestion = questionsLevel3;
+    } else if (level === 4) {
+        levelQuestion = questionsLevel4;
+    } else if (level === 5) {
+        levelQuestion = questionsLevel5;
+    } else if (level === 6) {
+        levelQuestion = questionsLevel6;
+    } else if (level === 7) {
+        levelQuestion = questionsLevel7;
+    } else if (level === 8) {
+        levelQuestion = questionsLevel8;
+    } else if (level === 9) {
+        levelQuestion = questionsLevel9;
+    } else if (level === 10) {
+        levelQuestion = questionsLevel10;
+    } else if (level === 11) {
+        levelQuestion = questionsLevel11;
+    } else if (level === 12) {
+        levelQuestion = questionsLevel12;
+    } else if (level === 13) {
+        levelQuestion = questionsLevel13;
+    } else if (level === 14) {
+        levelQuestion = questionsLevel14;
+    } else if (level === 15) {
+        levelQuestion = questionsLevel15;
+    } else if (level === 16) {
+        levelQuestion = questionsLevel16;
+    } else if (level === 17) {
+        levelQuestion = questionsLevel17;
+    } else if (level === 18) {
+        levelQuestion = questionsLevel18;
+    } else if (level === 19) {
+        levelQuestion = questionsLevel19;
+    } else if (level === 20) {
+        levelQuestion = questionsLevel20;
+    }
 }
 
 //This function randomly selects a different quote to display
@@ -65,24 +98,14 @@ function init() {
     startButton.textContent = `Ay Caramba!`;
     questionBlock.appendChild(startButton);
 
+
     startButton.addEventListener("click", function() {
-        startQuiz(questionsLevel1);
+        questionSelector(level);
+        startQuiz(levelQuestion);
         displayScoreTime();
         displayLevel();
         randomQuotes(quotes);
     });
-}
-
-//This function clears all elements children of the main block
-function clearBlock() {
-    questionBlock.innerHTML="";
-}
-
-//This function resets all counts
-function resetTimer() {
-    questionDuration = 15;
-    secondsElapsed = 0;
-    clearInterval(gameInterval);
 }
 
 //This function starts the game and calls the necessary functions for it
@@ -92,7 +115,11 @@ function startQuiz(question) {
     startTimer();
 
     displayQuestions(question);
+}
 
+//This function clears all elements children of the main block
+function clearBlock() {
+    questionBlock.innerHTML="";
 }
 
 //This function starts the timer and set action when it reaches zero
@@ -158,8 +185,11 @@ function scoreAnswer(answerSelected) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
                     removeElement("level-block");
-                    displayQuestions(questionsLevel1);
-                    displayLevel(); 
+                    questionSelector(level)
+                    displayQuestions(levelQuestion);
+                    questionDuration = 15;
+                    secondsElapsed = 0;
+                    displayLevel();
                     updateScore(); 
                     randomQuotes(quotes);                 
                 }, 500);   
