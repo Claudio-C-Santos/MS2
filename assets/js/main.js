@@ -8,10 +8,13 @@ let gameBlock = document.querySelector("#gameBlock");
 let score = 0;
 let level = 1;
 
+//Time to answer each question
 let questionDuration = 14;
+//This variable is used to calculate the time left and the points earned on each questions 
 let secondsElapsed = 0;
 let gameInterval;
 
+//Array where the current selcted question will be pushed to display
 let levelQuestion = [];
 
 //This adjusts levelBlock's width to fit with the divs created via JS functions
@@ -88,10 +91,9 @@ function init() {
 
     let description = document.createElement("p");
     description.setAttribute("class", "descrText");
-    description.textContent = `This quiz will test your knowledge about the amazing TV show THE SIMPSONS. \r\n 
-    There are 20 levels to go through, each of them is based of different aspects of the show. \r\n 
-    You will have 15 seconds to answer each question and once you have done it correctly, the remaining seconds will be added as points to your score. There are no second chances so let's see if you are a real Simpsons Fan!\r\n
-    Whenever you are ready just press the button below to start the game!`;
+    description.textContent = `Do you consider yourself a true Simpsons fan? Then this quiz is for you! \r\n 
+    You have 15 seconds the answer correctly all 20 question about this world wide famous show. However I wouldn't take too long to select your answer because the remaining seconds are the amount of points earned on each round! \r\n 
+    Go ahead and start the game by clicking the button bellow! `;
     questionBlock.appendChild(description);
 
     let introImage = document.createElement("img");
@@ -103,7 +105,6 @@ function init() {
     startButton.setAttribute("class", "btn");
     startButton.textContent = `Ay Caramba!`;
     questionBlock.appendChild(startButton);
-
 
     startButton.addEventListener("click", function() {
         questionSelector(level);
@@ -227,10 +228,49 @@ function finalScore() {
 
     removeElement("scoreAndTime");
 
-    let description = document.createElement("p");
-    description.setAttribute("class", "descrText");
-    description.textContent = `Your score was ${score}`;
-    questionBlock.appendChild(description);
+    questionBlock.setAttribute("style", "display: flex;")
+    questionBlock.setAttribute("style", "flex-direction: row;")
+
+    let finalScore = document.createElement("h1");
+    finalScore.setAttribute("class", "final-results");
+    finalScore.textContent = `LEVEL: ${level}`;
+    questionBlock.insertBefore(finalScore, questionBlock.firstChild);
+
+    let finalLevel = document.createElement("h1");
+    finalLevel.setAttribute("class", "final-results");
+    finalLevel.textContent = `SCORE: ${score}`;
+    questionBlock.insertBefore(finalLevel, questionBlock.firstChild);
+
+    let deadCat = document.createElement("img");
+    deadCat.setAttribute("src", "assets/images/dead.png");
+    deadCat.setAttribute("class", "image-left");
+    questionBlock.insertBefore(deadCat, questionBlock.firstChild);
+
+    let finalBart = document.createElement("img");
+    finalBart.setAttribute("src", "assets/images/bart.png");
+    finalBart.setAttribute("class", "image-right");
+    questionBlock.insertBefore(finalBart, questionBlock.firstChild);
+    
+    let finalHeading = document.createElement("h1");
+    finalHeading.setAttribute("class", "result-title");
+    finalHeading.textContent = `Just like the Simpsons many pets...you are done!`;
+    questionBlock.insertBefore(finalHeading, questionBlock.firstChild);
+
+    let startButton = document.createElement("button");
+    startButton.setAttribute("class", "btn");
+    startButton.textContent = `Play Again`;
+    questionBlock.appendChild(startButton);
+
+    startButton.addEventListener("click", function() {
+        displayScoreTime();
+        questionDuration = 14;
+        secondsElapsed = 0;
+        resetScore();
+        resetLevel();
+        questionSelector(level);
+        startQuiz(levelQuestion);
+        randomQuotes(quotes);
+    });
 }
 
 //This function runs once the 20th question has been correctly answered and the quiz completed
@@ -243,10 +283,50 @@ function endOfGame() {
 
     removeElement("scoreAndTime");
 
-    let description = document.createElement("p");
-    description.setAttribute("class", "descrText");
-    description.textContent = `You completed the quiz!`;
-    questionBlock.appendChild(description);
+    questionBlock.setAttribute("style", "display: flex;")
+    questionBlock.setAttribute("style", "flex-direction: row;")
+
+    let finalLevel = document.createElement("h1");
+    finalLevel.setAttribute("class", "final-results");
+    finalLevel.textContent = `SCORE: ${score}`;
+    questionBlock.insertBefore(finalLevel, questionBlock.firstChild);
+
+    let deadCat = document.createElement("img");
+    deadCat.setAttribute("src", "assets/images/homer_end.png");
+    deadCat.setAttribute("class", "image-left");
+    questionBlock.insertBefore(deadCat, questionBlock.firstChild);
+
+    let finalBart = document.createElement("img");
+    finalBart.setAttribute("src", "assets/images/otto_end.png");
+    finalBart.setAttribute("class", "image-right");
+    questionBlock.insertBefore(finalBart, questionBlock.firstChild);
+    
+    let finalSubHeading = document.createElement("h1");
+    finalSubHeading.setAttribute("class", "result-title");
+    finalSubHeading.textContent = `You answered correctly all the questions without even a D'oh!`;
+    questionBlock.insertBefore(finalSubHeading, questionBlock.firstChild);
+
+    let finalHeading = document.createElement("h1");
+    finalHeading.setAttribute("class", "result-title");
+    finalHeading.setAttribute("id", "congratulations");
+    finalHeading.textContent = `CONGRATULATIONS!`;
+    questionBlock.insertBefore(finalHeading, questionBlock.firstChild);
+
+    let startButton = document.createElement("button");
+    startButton.setAttribute("class", "btn");
+    startButton.textContent = `Play Again`;
+    questionBlock.appendChild(startButton);
+
+    startButton.addEventListener("click", function() {
+        displayScoreTime();
+        questionDuration = 14;
+        secondsElapsed = 0;
+        resetScore();
+        resetLevel();
+        questionSelector(level);
+        startQuiz(levelQuestion);
+        randomQuotes(quotes);
+    });
 }
 
 //Function used to remove elements from DOM
@@ -309,4 +389,14 @@ function displayScoreTime() {
 function updateScore() {
     score += document.getElementById('timer').textContent - secondsElapsed;
     document.getElementById("score").textContent = score;
+}
+
+function resetScore() {
+    score = 0;
+    document.getElementById("score").textContent = score;
+}
+
+function resetLevel() {
+    level = 1;
+    displayLevel()
 }

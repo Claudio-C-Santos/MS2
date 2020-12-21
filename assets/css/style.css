@@ -2,6 +2,7 @@
     font-family: theSimpsons;
     src: url('../fonts/Simpsonfont.ttf');
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
 
 
@@ -29,7 +30,11 @@ header>div {
 }
 
 #headerLogo {
-  max-height: 200px;
+     max-height: 200px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .simpsonsFont {
@@ -39,6 +44,10 @@ header>div {
 #level-img {
     height: 400px;
     border-radius: 25px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .block {
@@ -67,6 +76,10 @@ p {
 
 #introTitle {
     text-align: center;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 
@@ -84,12 +97,20 @@ p {
     width: auto;
     padding: 0;
     width: 100%;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .question {
     letter-spacing: 4px;
     text-align: center;
     font-size: 30px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .answers {
@@ -98,6 +119,10 @@ p {
     width: 50%;
     margin: auto;
     font-size: 30px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .btn {
@@ -106,16 +131,35 @@ p {
     background: #f05a2b;
     font-family: theSimpsons;
     font-weight: bold;
-    margin: 25px auto;
+    margin: 50px auto;
     display: block;
+    transition: .8s ease;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .btn:focus {
     outline: none;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 100px 20px #f05a2b;
+    transition: .8s ease;
 }
 
 #introImage {
     float: right;
+    margin-right: 20px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .descrText{
@@ -124,15 +168,28 @@ p {
     font-family: "Josefin Sans", sans-serif;
     font-weight: bold;
     text-align: justify;
+    margin-left: 20px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 #quote {
     margin: 10px;
     font-family: "Josefin Sans", sans-serif;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 #author {
     margin: 10px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 ul {
@@ -145,6 +202,10 @@ ul {
     font-weight: bold;
     text-align: center;
     margin-bottom: 40px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .answersList {
@@ -158,6 +219,10 @@ ul {
     width: 75%;
     border: 2px solid #f05a2b;
     border-radius: 25px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .answersList:hover {
@@ -171,6 +236,10 @@ ul {
     width: 150px;   
     text-align: center;
     margin: 20px auto 10px auto;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .scoreTime {
@@ -178,9 +247,94 @@ ul {
     font-size: 3rem;
     width: 150px;   
     text-align: center;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 #timer {
     float: right;
     margin-bottom: 1rem;
+}
+
+.image-left {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    clear: left;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.image-right {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    clear: right;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.result-title {
+    font-family: theSimpsons; 
+    letter-spacing: 4px;   
+    text-align: center;
+    width: 100%;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.final-results {
+    font-family: theSimpsons; 
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 50px;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+#end-score {
+    font-family: theSimpsons; 
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 75px; 
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;   
+}
+
+#congratulations {
+    margin: 50px 0;
+    font-size: 50px;
+    color: #f05a2b;
+    -webkit-text-stroke: 0.5px black;
+    transform: scale(0.9);
+    animation: bopB 1s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards
+      infinite alternate;
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+
+/*Animation sourced from https://codepen.io/kylewetton/pen/yLBwdJX*/
+@keyframes bopB {
+  0% {
+    transform: scale(0.9);
+  }
+  80%,
+  100% {
+    transform: scale(1) rotateZ(-3deg);
+  }
 }
