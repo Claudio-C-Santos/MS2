@@ -2,8 +2,8 @@
 let questionsLevel1 = [
     {
         question: "Which is the main color of the Simpsons world?",
-        options: ["blue", "green", "yellow", "pink"],
-        answer: "yellow"
+        options: ["Blue", "Green", "Yellow", "Pink"],
+        answer: "Yellow"
     },
     {
         question: "How many kids are there in the Simpsons family?",
@@ -14,9 +14,28 @@ let questionsLevel1 = [
         question: "What is the name of the simpsons' neighbour?",
         options: ["Milhouse", "Carl", "Moe", "Flanders"],
         answer: "Flanders"
+    },
+    {
+        question: "Where does Homer work?",
+        options: ["Nuclear Power Plant", "Moe's Bar", "Kwik-E-Mart", "Hospital"],
+        answer: "Nuclear Power Plant"
+    },
+    {
+        question: "Who is Springfield's Police Chief?",
+        options: ["Chief Raplh", "Chief Flanders", "Chief Homer", "Chief Wiggum"],
+        answer: "Chief Wiggum"
+    },
+    {
+        question: "What is the name of Springfield's Mayor?",
+        options: ["Quimby", "Ralph", "Wiggum", "Brockman"],
+        answer: "Quimby"
+    },
+    {
+        question: "Where do The Simpsons live?",
+        options: ["Quahog", "Cleveland", "Springfield", "Langley Falls"],
+        answer: "Springfield"
     }
 ]
-
 
 //Questions about the family member's names
 let questionsLevel2 = [
@@ -55,9 +74,9 @@ let questionsLevel3 = [
         answer: "Duff"
     },
     {
-        question: "What is the color of Homer's shirt?",
-        options: ["Orange", "White", "Green", "Black"],
-        answer: "White"
+        question: "How many hairs does Homer have?",
+        options: ["Fully haired", "Two", "Three", "He is bald"],
+        answer: "Two"
     },
     {
         question: "What is the color of Homer's pants?",
@@ -68,6 +87,11 @@ let questionsLevel3 = [
         question: "What is the name of Homer's wife?",
         options: ["Lisa", "Maude", "Selma", "Marge"],
         answer: "Marge"
+    },
+    {
+        question: "Does Homer frequently steal from his neighbour?",
+        options: ["Yes", "No"],
+        answer: "Yes"
     }
 ]
 
@@ -92,6 +116,16 @@ let questionsLevel4 = [
         question: "What is the name of Lisa's brother?",
         options: ["Apu", "Ralph", "Bart", "Milhouse"],
         answer: "Bart"
+    },
+    {
+        question: "Is Lisa not a vegatarian?",
+        options: ["Yes", "No"],
+        answer: "No"
+    },
+    {
+        question: "Besides English what other language does Lisa speak?",
+        options: ["Italian", "German", "French", "Spanish"],
+        answer: "Italian"
     }
 ]
 
@@ -112,6 +146,21 @@ let questionsLevel5 = [
         options: ["Homer", "Carl", "Moe", "Skinner"],
         answer: "Homer"
     },
+    {
+        question: "The person who does is male or female?",
+        options: ["Male", "Female"],
+        answer: "Female"
+    },
+    {
+        question: "Which piece of clothes Bart is always telling people to eat?",
+        options: ["Jeans", "Pants", "Shorts", "Trunks"],
+        answer: "Shorts"
+    },
+    {
+        question: "What is Bart's real name?",
+        options: ["Homero", "Bartholomew", "Bartino", "Ambar"],
+        answer: "Bartholomew"
+    }
 ]
 
 //Questions about Marge
@@ -131,15 +180,25 @@ let questionsLevel6 = [
         options: ["Yes", "No"],
         answer: "Yes"
     },
+    {
+        question: "How many sisters does Marge have?",
+        options: ["One", "Two", "Three", "Four"],
+        answer: "Two"
+    },
+    {
+        question: "Marge's sisters are not twins?",
+        options: ["Yes", "No"],
+        answer: "No"
+    },
+    {
+        question: "Does Marge commit any crime during the show?",
+        options: ["Yes", "No"],
+        answer: "Yes"
+    }
 ]
 
 //Questions about Maggie
 let questionsLevel7 = [
-    {
-        question: "Has Maggie learned how to speak?",
-        options: ["Yes", "No"],
-        answer: "No"
-    },
     {
         question: "Which are the name of Maggie's parents?",
         options: ["Homer and Marge", "Homer and Selma", "Carl and Marge", "Moe and Marge"],
@@ -179,13 +238,18 @@ let questionsLevel8 = [
         options: ["No", "Yes"],
         answer: "No"
     },
+    {
+        question: "Are Milhouse's parents still married?",
+        options: ["Yes", "No"],
+        answer: "No"
+    }
 ]
 
 //Questions about Flanders
 let questionsLevel9 = [
     {
-        question: "Is Flanders a Evangelical Christian?",
-        options: ["Yes", "No"],
+        question: "Which is Flander's religion?",
+        options: ["Muslemism", "Judaism", "Christianism", "Buddhism"],
         answer: "Yes"
     },
     {
@@ -194,10 +258,15 @@ let questionsLevel9 = [
         answer: "Yes"
     },
     {
-        question: "How many kids does Flanders have in The Simpsons?",
+        question: "How many kids does Flanders have?",
         options: ["Two", "Three", "Six", "One"],
         answer: "Two"
     },
+    {
+        question: "Is Flanders a religious man?",
+        options: ["Yes", "No"],
+        answer: "Yes"
+    }
 ]
 
 //Questions about characters related to Moe's bar
@@ -221,7 +290,7 @@ let questionsLevel10 = [
         question: "With who does Homer usually spend his time at Moe's?",
         options: ["Lisa and Bart", "Lenny and Carl", "Moe and Lenny", "Carl and Moe"],
         answer: "Lenny and Carl"
-    },
+    }
 ]
 
 //Questions about Krusty
@@ -290,22 +359,27 @@ let questionsLevel14 = [
     }
 ]
 
-//Questions about Bart and Lisa's school
+//Questions about Otto
 let questionsLevel15 = [
     {
-        question: "What is the name of Bart's school?",
-        options: ["Quahog Elementary School", "Springfield Elementary School", "Cleveland Elementary School","New York Elementary School"],
-        answer: "Springfield Elementary School"
+        question: "Which vehicle Otto drives for Springfield Elementary?",
+        options: ["Car", "Bus", "Motorbike","Truck"],
+        answer: "Bus"
     },
     {
-        question: "What is the name of Springfield Elementary School?",
-        options: ["Ned Flanders", "Nelson Muntz", "Fat Tony", "Seymour Skinner"],
-        answer: "Seymour Skinner"
+        question: "Which is Otto's favourite music genre?",
+        options: ["Heavy Metal", "Rock", "Pop", "Reggae"],
+        answer: "Rock"
     },
     {
-        question: "Which of these characters are seen with Bart in school?",
-        options: ["Homer and Carl", "Milhouse and Nelson", "Mr. Burns and Smithers", "Lisa and Maggie"],
-        answer: "Milhouse and Nelson"
+        question: "Otto usually treats people by Dude?",
+        options: ["Yes", "No"],
+        answer: "Yes"
+    },
+    {
+        question: "Have there been signs during the show that Otto does drugs?",
+        options: ["Yes", "No"],
+        answer: "Yes"
     }
 ]
 
@@ -314,7 +388,7 @@ let questionsLevel16 = [
     {
         question: "What does Mr. Burns own?",
         options: ["Nuclear Power Plant", "Kwik-E-Mart", "Comic Book Store", "Bar"],
-        answer: "Nuclear Factory"
+        answer: "Nuclear Power Plant"
     },
     {
         question: "Who owns Kwik-E-Mart?",
@@ -341,7 +415,7 @@ let questionsLevel16 = [
 //Questions about the show's generic
 let questionsLevel17 = [
     {
-        question: "Where doe the Simpson sit at the end of every generic?",
+        question: "Where does the Simpsons family sit at the end of every generic?",
         options: ["On the floor", "On their couch", "On the stairs", "In separate rooms"],
         answer: "On their couch"
     },
@@ -359,30 +433,40 @@ let questionsLevel17 = [
         question: "Who is in detention at the beginning of every episode?",
         options: ["Marge", "Bart", "Lisa", "Maggie"],
         answer: "Bart"
+    },
+    {
+        question: "In the generice, who is sitting in the car with Marge?",
+        options: ["Marge", "Bart", "Lisa", "Maggie"],
+        answer: "Maggie"
     }
 ]
 
-//Questions about each character's job
+//Questions about Simpsons The Movie
 let questionsLevel18 = [
     {
-        question: "Where does Homer work?",
-        options: ["Nuclear Power Plant", "Moe's", "Kwik-E-Mart", "Hospital"],
-        answer: "Nuclear Power Plant"
+        question: "Which animal is Homer's new pet on Simpsons The Movie?",
+        options: ["Dog", "Horse", "Cat", "Pig"],
+        answer: "Pig"
     },
     {
-        question: "Who is Springfield's Police Chief?",
-        options: ["Chief Raplh", "Chief Flanders", "Chief Homer", "Chief Wiggum"],
-        answer: "Chief Wiggum"
+        question: "Which animal gets extra eyes after being exposed to radioactive matter in Simpsons The Movie?",
+        options: ["Dog", "Bird", "Fish", "Pig"],
+        answer: "Fish"
     },
     {
-        question: "What is the name of Springfield's Mayor?",
-        options: ["Quimby", "Ralph", "Wiggum", "Brockman"],
-        answer: "Quimby"
+        question: "Which famous band stars in Simpsons The Movie?",
+        options: ["Coldplay", "Nirvana", "U2", "Green Day"],
+        answer: "Green Day"
     },
     {
-        question: "What is the name of Springfield's News anchor?",
-        options: ["Ned Flanders", "Ralph Wiggum", "Kent Brockman", "Maggie Simpson"],
-        answer: "Kent Brockman"
+        question: "Who causes the pollution crisis in Simpsons The Movie?",
+        options: ["Otto", "Marge", "Chief Wiggum", "Homer"],
+        answer: "Homer"
+    },
+    {
+        question: "What does Homer throw into a lake that causes the pollution crisis in Simpsons The Movie?",
+        options: ["Car", "Silo", "Garbage", "Microwave"],
+        answer: "Silo"
     }
 ]
 

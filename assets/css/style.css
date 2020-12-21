@@ -91,7 +91,7 @@ p {
 
 #quote-block {
     font-family: theSimpsons;
-    text-align: center;
+        text-align: center;
     font-size: 1.5rem;    
     display: inline;
     width: auto;
