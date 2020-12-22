@@ -6,7 +6,7 @@ let gameBlock = document.querySelector("#gameBlock");
 
 //These are game related variables which change during the quiz's course
 let score = 0;
-let level = 17;
+let level = 1;
 
 //Time to answer each question
 let questionDuration = 14;
@@ -193,7 +193,7 @@ function scoreAnswer(answerSelected) {
                 e.setAttribute("style", "background-color: green");
                 setTimeout(function() {
                     removeElement("level-block");
-                    questionSelector(level)
+                    questionSelector(level);
                     displayQuestions(levelQuestion);
                     questionDuration = 15;
                     secondsElapsed = 0;
@@ -228,8 +228,8 @@ function finalScore() {
 
     removeElement("scoreAndTime");
 
-    questionBlock.setAttribute("style", "display: flex;")
-    questionBlock.setAttribute("style", "flex-direction: row;")
+    questionBlock.setAttribute("style", "display: flex;");
+    questionBlock.setAttribute("style", "flex-direction: row;");
 
     let finalScore = document.createElement("h1");
     finalScore.setAttribute("class", "final-results");
@@ -283,8 +283,8 @@ function endOfGame() {
 
     removeElement("scoreAndTime");
 
-    questionBlock.setAttribute("style", "display: flex;")
-    questionBlock.setAttribute("style", "flex-direction: row;")
+    questionBlock.setAttribute("style", "display: flex;");
+    questionBlock.setAttribute("style", "flex-direction: row;");
 
     let finalLevel = document.createElement("h1");
     finalLevel.setAttribute("class", "final-results");
@@ -398,5 +398,5 @@ function resetScore() {
 
 function resetLevel() {
     level = 1;
-    displayLevel()
+    displayLevel();
 }

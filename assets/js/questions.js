@@ -369,7 +369,7 @@ let questionsLevel15 = [
     {
         question: "Which is Otto's favourite music genre?",
         options: ["Heavy Metal", "Rock", "Pop", "Reggae"],
-        answer: "Rock"
+        answer: "Heavy Metal"
     },
     {
         question: "Otto usually treats people by Dude?",
