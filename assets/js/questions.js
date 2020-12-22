@@ -258,7 +258,7 @@ let questionsLevel9 = [
         answer: "Yes"
     },
     {
-        question: "How many kids does Flanders have?",
+        question: "How many children does Flanders have?",
         options: ["Two", "Three", "Six", "One"],
         answer: "Two"
     },

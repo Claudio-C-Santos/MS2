@@ -6,7 +6,7 @@ let gameBlock = document.querySelector("#gameBlock");
 
 //These are game related variables which change during the quiz's course
 let score = 0;
-let level = 1;
+let level = 17;
 
 //Time to answer each question
 let questionDuration = 14;
@@ -92,8 +92,8 @@ function init() {
     let description = document.createElement("p");
     description.setAttribute("class", "descrText");
     description.textContent = `Do you consider yourself a true Simpsons fan? Then this quiz is for you! \r\n 
-    You have 15 seconds the answer correctly all 20 question about this world wide famous show. However I wouldn't take too long to select your answer because the remaining seconds are the amount of points earned on each round! \r\n 
-    Go ahead and start the game by clicking the button bellow! `;
+    You will have 15 seconds to answer correctly each of the 20 questions. Is 5 minutes enough for you to show what you got? But don't just take your time because the faster you answer the more points you will earn. Points are determined by the reamining seconds when the question is answered, the faster you reply more points you will receive. 
+    \n Go ahead and start the game by clicking the button bellow! `;
     questionBlock.appendChild(description);
 
     let introImage = document.createElement("img");

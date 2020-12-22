@@ -33,89 +33,179 @@ This quiz's goal is to:
 * Teach more fun facts about the show.
 * Show famous quotes from the show and their authors.
 
-A live demo of website can be found [here](https://claudio-c-santos.github.io/The-Simpsons-Quizz/).
+A live demo of website can be found [here](https://claudio-c-santos.github.io/MS2-The_Simpsons-Quizz/).
 
 ## UX
+
 The main users of this website will be The Simpsons fans that want to test out their knowledge on the show. Each level's category gives the user opportunity 
 to not only test general facts about the show but also specific facts of some characters and places within the show.
 
+The navigation is very simple since, once the aplication runs, the only interaction available is the "Ay Caramba! button which starts the game. When in the actual quiz,
+the user can only select one answer from the ones available, sometimes there are four option but in the "Yes/No" kind of questions there, obviously, only two options.
+
+<img src="assets/screenshots/index_screenshot.jpg" alt="Index Screenshot">
+
 ### User Stories
 
-- As a fan of the show, I want to test my general knowledge about the show.
-- 
+- As a fan of the show, I want to play the quiz, in order to test my knowledge on the show.
+- As a fan of the show, I want to know who's the author of each random quote displayed, to increase my knowledge of the show.
+- As a new player, I want to know the game's rules, to know how to play the game.
+- As a player, I want to know if my answer is correct of not, to confirm my answer.
+- As a player, I want to know how much time I have left to answer the current question, in order to manage my time.
+- As a player, I want to know what's is my current score, to see if I should try to give my answer faster.
+- As a player, I want to know what's my current level, to see if I'm close to completing the quiz.
+- As a player that answered incorrectly, I want to know what was my score and which level did I reach, to evaluate my performance.
+- As a player that completed the quiz, I want to know what was my score in the end, to evaluate my performance.
 
-<!---
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best 
-way to help them achieve these things.
+### Strategy
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+The goal of this quiz is to give an oportunity the The Simpsons fans to test their general knowledge about the show. An effort was made so that all the graphic
+elements are exactly the same as the ones used on the show. All the images, colors and some of the fonts used are the original ones used in the show. 
+The colors were gathered using an eye drop tool in order to select, for example, the exact type of yellow used in the actual show. All the images were also 
+verified to be exactly like the show and that there was no flaw or differences.
+<br>
+The questions are divided between 20 categories as intructed in the beginning of this file. This gives the user an oportunity to test various areas of knowledge on The Simpsons.
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. 
-These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online 
-and can be in any format that is viewable inside the browser.
--->
+### Scope
 
+The whole quiz was built thinking that the user will be a true The Simpsons fan and will have a more enjoyable experience if everything looks exactly like the show.
 
-Features
-<!--
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
--->
+### Wireframes
 
-Existing Features
-<!--
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+* Home
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
--->
+<img src="assets/wireframes/index.jpg" alt="Index Wireframe">
 
-Features Left to Implement
-Another feature idea
-Technologies Used
-<!--In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used. -->
+* Questions
 
-JQuery
-<!--The project uses JQuery to simplify DOM manipulation.-->
+<img src="assets/wireframes/questions.jpg" alt="Index Wireframe">
 
-Testing
-<!--
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+* When wrong answer is given
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+<img src="assets/wireframes/wrong_answer.jpg" alt="Index Wireframe">
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+* When all 20 questions are answered correctly
 
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+<img src="assets/wireframes/congratulations.jpg" alt="Index Wireframe">
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+### Surface
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
--->
+The palette of caolors was chosen based on the original ones used in the show.
 
+## Features
 
-Deployment
-<!--
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+When the index is loaded a set of instructions is displayed along with a button to start the quiz. Below there's also a box displaying a random quote from one of the characters.
+Everytime the user clicks on something the quote changes.
+<br>
+Once the button "Ay Caramba!" is pressed the quiz will start. On the left there's a box with and image and a number, this number represents the current level. 
+It will change the image and increase the number as the user progresses in the quiz. The middle box is where the current level's question and answer options are displayed.
+Fro each level there's a list of questions regarding the related category from where the code randomly selects one to displays along with its answer options. 
+On the right there's another box displaying the remaining time to answr the current question along with the current score. The score is calculated by summing the remaining 
+seconds when each level's question is answered correctly.
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+### Existing Features
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
--->
+<ins>Feature 1</ins><br>
+* Allows a fan to test he/she's knowledge on the show by playing the quiz.<br>
 
-Credits
-Content
-<!--The text for section Y was copied from the Wikipedia article Z-->
-Media
-<!--The photos used in this site were obtained from ...-->
-Acknowledgements
-<!--I received inspiration for this project from X-->
+<ins>Feature 2</ins>
+* Allows the user that has the interest, to know who is the every random quote displayed.<br>
+
+<img src="assets/screenshots/feature2.jpg" alt="Feature 2 Example">
+
+<ins>Feature 3</ins><br>
+* A new player can learn the rules on the index page.<br>
+
+<img src="assets/screenshots/feature3.jpg" alt="Feature 2 Example">
+
+<ins>Feature 4</ins><br>
+* The player will know if the answer selected is correct because the div will turn green if correct and red if incorrect.<br>
+
+<img src="assets/screenshots/feature4.jpg" alt="Feature 2 Example">
+<br>
+<img src="assets/screenshots/feature4red.jpg" alt="Feature 2 Example">
+
+<ins>Feature 5</ins><br>
+* A timer is displayed on the right side of the screen to allow the player to manage his time left.<br>
+
+<img src="assets/screenshots/feature5.jpg" alt="Feature 2 Example">
+
+<ins>Feature 7</ins><br>
+* On the right side of the screen, below the timer, the current score is displayed for the player to keep track.<br>
+
+<img src="assets/screenshots/feature7.jpg" alt="Feature 2 Example">
+
+<ins>Feature 8</ins><br>
+* On the left side of the screen, an image is displayed which shows the current level on its top right corner.<br>
+
+<img src="assets/screenshots/feature8.jpg" alt="Feature 2 Example">
+
+<ins>Feature 9</ins><br>
+* When a question is answered incorrectly the game ends and the final score along with the level reached are displayed for the player's knowledge.<br>
+
+<img src="assets/screenshots/game-over.jpg" alt="Feature 2 Example">
+
+<ins>Feature 10</ins><br>
+* When the player completes the quiz, his final score is displayed along with a congratulations message so that he know the quiz has been completed.<br>
+
+<img src="assets/screenshots/completed.jpg" alt="Feature 2 Example">
+
+### Features Left to Implement
+
+Some sound effects when the user starts the quiz, when answers incorrectly or when answers all 20 questions correctly.
+
+# Technologies Used
+
+- This website uses HTML, CSS and JavaScript programming languages.
+- [jQuery v3.5.1](https://code.jquery.com/)
+    - Used to simplify DOM manipulation.
+- [Google Fonts](https://fonts.google.com/)
+    - Josefin Sans font style was used with 500 has font weight.
+
+# Testing
+
+All the tests done to this website can be found in [testing.md](testing.md).
+
+# Deployment
+
+This project was developed using Gitpod IDE, committed to git and pushed to GitHub using the built in function within Gitpod.
+
+To deploy this page to GitHub Pages from its GitHub repository, the following steps were taken:
+1. Log into [GitHub](https://github.com/).
+2. Navigate to my repositories and select **Claudio-C-Santos/MS2-The_Simpsons-Quizz**.
+3. From the menu items below the repository name, select **Settings**.
+4. Scroll down to the **GitHub Pages** section.
+5. Under **Source** be sure **Master Branch** is selected. 
+6. On selecting Master Branch the page is automatically refreshed, the website is now deployed.
+
+### Procedure to run code locally
+
+1. Log into [GitHub](https://github.com/).
+2. Navigate to my repositories and select **Claudio-C-Santos/MS2-The_Simpsons-Quizz**.
+3. Under the repository name, click "Clone or download".
+4. Click on dropdown button Code above the repository files area.
+5. In your local IDE open Git Bash.
+6. Access the directory you wish to clone the respository into.
+7. Type git clone and then paste the URL you copied in Step 3 like this "git clone https://github.com/Claudio-C-Santos/MS2-The_Simpsons-Quizz/settings"
+9. Press Enter. Your local clone will be created.
+
+## Credits
+
+### Content
+
+- This proejct was built based on another project found on GitHub from gabepettus https://github.com/gabepettus/TimedQuiz.
+- All the images were sourced from a fanart website https://fanart.tv/series/71663/the-simpsons/.
+- The below websites were used to source the list of quotes to display randomly.
+    - https://screenrant.com/best-quotes-from-the-simpsons/
+    - https://www.goldderby.com/gallery/the-simpsons-funniest-homer-simpson-quotes/
+    - https://www.scarymommy.com/simpsons-quotes/
+- The questions and respective answers were all written by me using Wikipedia to confirm or get additional information.
+
+### Acknowledgements
+
+Since this quizz is based on the one built by [gabepettus] (https://github.com/gabepettus), I would like to congratulate and thank for his work.<br>
+It was very helpful for me because it allowed me to understand his structure so that I could build one that fitted my needs and ideas.<br>
+Another person that I would like to thank a lot is my mentor, Gurjot Singh, who guided me when I was a bit lost after completing Javascript's module.<br>
+He advised me and gave me support in order to overcome my issues and be ready to properly build my MS2. Student Care and the Slack community also provided a lot of support.<br>
+I would like to thank The Simpsons fanart community for creating amazing and proper images and other graphic elements.<br>
+For last, I would like to thank my girlfriend, Dennelise Wever, which has been giving all the support to complete this course. Including all my friends that spent some time testing and giving feedback on this project.<br> 
