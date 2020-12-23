@@ -25,8 +25,8 @@ This quiz was built to test any fan's general knowledge about the show through 2
 - Level 19 - Guess the author of these famous quotes
 - Level 20 - Final question about the year when The Simpsons was first broadcasted
 
-The game's rules are very simple: the user has 15 seconds to answer correctly to each level's question, if the user answers incorrectly the game ends but 
-if the answer given is correct, the remaining seconds will be added as points to the score.
+The game rules are very simple: the user has 15 seconds to answer correctly each level's question, if the user answers incorrectly the game ends but 
+if the answer given is correct, the remaining seconds will be added as points to the score and he will progress to the next level.
 
 This quiz's goal is to:
 * Test the fan's general knowledge.
@@ -40,7 +40,7 @@ A live demo of website can be found [here](https://claudio-c-santos.github.io/MS
 The main users of this website will be The Simpsons fans that want to test out their knowledge on the show. Each level's category gives the user opportunity 
 to not only test general facts about the show but also specific facts of some characters and places within the show.
 
-The navigation is very simple since, once the aplication runs, the only interaction available is the "Ay Caramba! button which starts the game. When in the actual quiz,
+The navigation is very simple since, once the aplication runs, the only interaction available is the "Ay Caramba!" button which starts the game. When in the actual quiz,
 the user can only select one answer from the ones available, sometimes there are four option but in the "Yes/No" kind of questions there, obviously, only two options.
 
 <img src="assets/screenshots/start.jpg" alt="Index Screenshot">
@@ -48,11 +48,11 @@ the user can only select one answer from the ones available, sometimes there are
 ### User Stories
 
 - As a fan of the show, I want to play the quiz, in order to test my knowledge on the show.
-- As a fan of the show, I want to know who's the author of each random quote displayed, to increase my knowledge of the show.
-- As a new player, I want to know the game's rules, to know how to play the game.
-- As a player, I want to know if my answer is correct of not, to confirm my answer.
+- As a fan of the show, I want to know who's the author of each random quote displayed, to increase my knowledge on the show.
+- As a new player, I want to know the game rules, to know how to play the game.
+- As a player, I want to know if my answer is correct or not, to confirm my answer.
 - As a player, I want to know how much time I have left to answer the current question, in order to manage my time.
-- As a player, I want to know what's is my current score, to see if I should try to give my answer faster.
+- As a player, I want to know what's is my current score, to see if I should tmake an effort to answer faster.
 - As a player, I want to know what's my current level, to see if I'm close to completing the quiz.
 - As a player that answered incorrectly, I want to know what was my score and which level did I reach, to evaluate my performance.
 - As a player that completed the quiz, I want to know what was my score in the end, to evaluate my performance.
@@ -60,7 +60,7 @@ the user can only select one answer from the ones available, sometimes there are
 ### Strategy
 
 The goal of this quiz is to give an oportunity the The Simpsons fans to test their general knowledge about the show. An effort was made so that all the graphic
-elements are exactly the same as the ones used on the show. All the images, colors and some of the fonts used are the original ones used in the show. 
+elements are exactly the same as the ones used on the show. All the images, colors and some of the fonts used are faithful to the original. 
 The colors were gathered using an eye drop tool in order to select, for example, the exact type of yellow used in the actual show. All the images were also 
 verified to be exactly like the show and that there was no flaw or differences.
 <br>
@@ -90,17 +90,16 @@ The whole quiz was built thinking that the user will be a true The Simpsons fan 
 
 ### Surface
 
-The palette of caolors was chosen based on the original ones used in the show.
+The palette of colors was chosen based on the show itself.
 
 ## Features
 
 When the index is loaded a set of instructions is displayed along with a button to start the quiz. Below there's also a box displaying a random quote from one of the characters.
-Everytime the user clicks on something the quote changes.
+Everytime the user clicks on something the quote changes. Once the button "Ay Caramba!" is pressed the quiz will start.
 <br>
-Once the button "Ay Caramba!" is pressed the quiz will start. On the left there's a box with and image and a number, this number represents the current level. 
+On the left, there's a box with and image and a number, this number represents the current level. 
 It will change the image and increase the number as the user progresses in the quiz. The middle box is where the current level's question and answer options are displayed.
-Fro each level there's a list of questions regarding the related category from where the code randomly selects one to displays along with its answer options. 
-On the right there's another box displaying the remaining time to answr the current question along with the current score. The score is calculated by summing the remaining 
+On the right, there's another box displaying the remaining time to answer the current question along with the current score. The score is calculated by summing the remaining 
 seconds when each level's question is answered correctly.
 
 ### Existing Features

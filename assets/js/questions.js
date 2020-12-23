@@ -348,7 +348,7 @@ let questionsLevel13 = [
 //Questions about Aliens, Kang and Kodos
 let questionsLevel14 = [
     {
-        question: "Are there aliens the The Simpsons?",
+        question: "Are there aliens in The Simpsons?",
         options: ["Yes", "No"],
         answer: "Yes"
     },
