@@ -43,7 +43,7 @@ to not only test general facts about the show but also specific facts of some ch
 The navigation is very simple since, once the aplication runs, the only interaction available is the "Ay Caramba! button which starts the game. When in the actual quiz,
 the user can only select one answer from the ones available, sometimes there are four option but in the "Yes/No" kind of questions there, obviously, only two options.
 
-<img src="assets/screenshots/index_screenshot.jpg" alt="Index Screenshot">
+<img src="assets/screenshots/start.jpg" alt="Index Screenshot">
 
 ### User Stories
 
@@ -116,31 +116,31 @@ seconds when each level's question is answered correctly.
 <ins>Feature 3</ins><br>
 * A new player can learn the rules on the index page.<br>
 
-<img src="assets/screenshots/feature3.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature3.jpg" alt="Feature 3 Example">
 
 <ins>Feature 4</ins><br>
 * The player will know if the answer selected is correct because the div will turn green if correct and red if incorrect.<br>
 
-<img src="assets/screenshots/feature4.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature4.jpg" alt="Feature 4 Correct Answer Example">
 <br>
-<img src="assets/screenshots/feature4red.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature4red.jpg" alt="Feature 4 Incorrect Answer Example">
 
 <ins>Feature 5</ins><br>
 * A timer is displayed on the right side of the screen to allow the player to manage his time left.<br>
 
-<img src="assets/screenshots/feature5.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature5.jpg" alt="Feature 5 Example">
 
-<ins>Feature 7</ins><br>
+<ins>Feature 6</ins><br>
 * On the right side of the screen, below the timer, the current score is displayed for the player to keep track.<br>
 
-<img src="assets/screenshots/feature7.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature7.jpg" alt="Feature 6 Example">
 
-<ins>Feature 8</ins><br>
+<ins>Feature 7</ins><br>
 * On the left side of the screen, an image is displayed which shows the current level on its top right corner.<br>
 
 <img src="assets/screenshots/feature8.jpg" alt="Feature 2 Example">
 
-<ins>Feature 9</ins><br>
+<ins>Feature 8</ins><br>
 * When a question is answered incorrectly the game ends and the final score along with the level reached are displayed for the player's knowledge.<br>
 
 <img src="assets/screenshots/game-over.jpg" alt="Feature 2 Example">
