@@ -132,22 +132,22 @@ seconds when each level's question is answered correctly.
 <ins>Feature 6</ins><br>
 * On the right side of the screen, below the timer, the current score is displayed for the player to keep track.<br>
 
-<img src="assets/screenshots/feature7.jpg" alt="Feature 6 Example">
+<img src="assets/screenshots/feature6.jpg" alt="Feature 6 Example">
 
 <ins>Feature 7</ins><br>
 * On the left side of the screen, an image is displayed which shows the current level on its top right corner.<br>
 
-<img src="assets/screenshots/feature8.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/feature7.jpg" alt="Feature 7 Example">
 
 <ins>Feature 8</ins><br>
 * When a question is answered incorrectly the game ends and the final score along with the level reached are displayed for the player's knowledge.<br>
 
-<img src="assets/screenshots/game-over.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/game-over.jpg" alt="Feature 8 Example">
 
-<ins>Feature 10</ins><br>
+<ins>Feature 9</ins><br>
 * When the player completes the quiz, his final score is displayed along with a congratulations message so that he know the quiz has been completed.<br>
 
-<img src="assets/screenshots/completed.jpg" alt="Feature 2 Example">
+<img src="assets/screenshots/completed.jpg" alt="Feature 9 Example">
 
 ### Features Left to Implement
 
